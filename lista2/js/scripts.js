@@ -147,10 +147,10 @@ function exe6(){
     if (saldo > 400){
         credito.innerHTML = `O saldo médio é ${saldo} <br/> e o crédito especial é ${saldo*30/100}`
     }
-    else if ((saldo >= 300) && (saldo < 400)){
+    else if ((saldo > 300) && (saldo <= 400)){
         credito.innerHTML = `O saldo médio é ${saldo} <br/> e o crédito especial é ${saldo*25/100}`
     }
-    else if ((saldo >= 200) && (saldo < 300)){
+    else if ((saldo > 200) && (saldo <= 300)){
         credito.innerHTML = `O saldo médio é ${saldo} <br/> e o crédito especial é ${saldo*20/100}`
     }
     else if (saldo === 200){
@@ -158,3 +158,28 @@ function exe6(){
     }
 
  }
+function exe10(){
+    //recupera custo da fábrica
+    let custo = Number(document.getElementById("custo").value)
+    let distribuidor = 0
+    let imposto = 0
+    if (custo >= 0 && custo < 12000){
+        distribuidor = custo * 5 /100
+        imposto = 0
+    }
+    else if (custo >= 12000 && custo <= 25000){
+        distribuidor = custo * 10 / 100
+        imposto = custo * 15 / 100
+    }
+    else if (custo > 25000){//custo é negativo
+        distribuidor = custo * 15 / 100
+        imposto = custo * 20 / 100
+    }
+    else{
+        document.getElementById("consumidor").innerHTML = "Custo negativo"
+        return // sai da função
+    }
+    let consumidor = custo + distribuidor + imposto
+    document.getElementById("consumidor").innerHTML = `Custo da fábrica ${custo} <br/>
+Distribuidor ${distribuidor} <br/> imposto ${imposto} <br/> Valor ao consumidor ${consumidor}`
+}//fecha função
