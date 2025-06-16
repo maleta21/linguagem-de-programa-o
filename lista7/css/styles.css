@@ -1,0 +1,67 @@
+body {
+    font-family: arial, sans-serif;
+    background-color: rgb(213, 74, 74);
+/* usa modelo FlexBox, conceito de caixa para posicionamento */
+    display: flex;
+    align-items: center; /* centralizar verticalmente */
+    justify-content: center; /* centralizar horizontalmente */
+    height: 100vh; /* define a altura dda tela - 100% */
+}
+.card {
+    background-color: rgb(219, 134, 48);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 242, 0, 0.221);
+    text-align: center;
+
+button {
+    background: #f00b0b; ;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;/* 10px é superior e inferior e 15px é esquerda e direita*/
+    border-radius: 5px;/* borda */
+    cursor: pointer;/* ponteiro do mouse*/
+}
+}
+button:hover {
+    background-color: rgb(247, 237, 92);
+}
+
+.image{
+    border-radius: 50%;/* cantos aredondados de 50%*/
+    width: 135px;/* largura da imagem*/
+    height: 135px;/* altura da imagem */
+    margin-bottom: 10px;/* espaçamento externo abaixo */
+}
+.sidebar{
+    width: 200px;
+    height: 100vh;
+    background: #333;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
+.sidebar ul{
+    list-style: none;
+    padding: 0;
+}
+.sidebar ul li{
+    /* 15px acima e abaixo e 0px à direita e esquerda */
+    margin: 15px 0;
+}
+.sidebar ul li a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.container{
+    /* capacidade de um elemento crescer */
+    flex-grow: 1; 
+    padding: 20px;
+    margin-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

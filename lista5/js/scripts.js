@@ -82,3 +82,31 @@ function exe6(){
     alert(`${maior.nome} vai receber maior comissão de ${maior.comissao}`)
     alert(`${menor.nome} vai receber menor comissão de ${menor.comissao}`)
 }
+function exe9(){
+    let vetor = []
+    for(let i=0;i<10;i++){
+        let obj = {
+            nome: prompt(`Informe nome do produto ${i+1}`),
+            codigo: Number(prompt(`Informe o codigo do produto ${i+1}`)),
+            preco: Number(prompt(`Informe o preço do produto ${i+1}`)),
+            novo : 0
+        }
+        vetor.push(obj)
+    }
+    // gerar o relatório com os novos preços
+    for(let i=0;i<10;i++){
+        if (vetor[i].codigo % 2 == 0 && vetor[i].preco > 1000){
+            vetor[i].novo = vetor[i].preco + vetor[i].preco * 20/100
+        }
+        else if (vetor[i].codigo % 2 == 0){
+            vetor[i].novo = vetor[i].preco + vetor[i].preco * 15/100
+        }
+        else if (vetor[i].preco > 100){
+            vetor[i].novo = vetor[i].preco + vetor[i].preco * 10/100
+        }
+        else {
+            vetor[i].novo = vetor[i].preco
+        }
+        alert(`${vetor[i].nome} - ${vetor[i].codigo} - ${vetor[i].preco} - ${vetor[i].novo}`)
+    }
+}
